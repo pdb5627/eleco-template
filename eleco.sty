@@ -1,21 +1,19 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%  eleco2013.sty
+%  eleco.sty
 %
 %
-% Modified for ELECO 2013 
-% May 2013
+% Created for ELECO 2023
+% by Paul Brown (https://www.github.com/pdb5672/)
+%
+% Adapted from version for ELECO 2013
 % 
-% Credits to:
+% 2013 version credits to:
 % Alper Erdogan
 % Stephen Martucci  -- martucci@cdg.nj.nec.com
 % Jyri Huopaniemi -- jyri.huopaniemi@nokia.com
 % Matti Karjalainen -- matti.karjalainen@hut.fi
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\usepackage[latin5]{inputenc}
-%change default font to times-roman
-%\renewcommand{\sfdefault}{phv}
-%\renewcommand{\rmdefault}{ptm}
 
 \usepackage{times}
 \usepackage[italic]{mathastext}
@@ -38,7 +36,7 @@
 left=2cm,
 right=2cm,
 top=2.5cm,
-bottom=3.8cm,
+bottom=3.8cm,% Add 0.1cm to bottom margin for descenders.
 footskip=1cm,
 twocolumn,
 columnsep=5mm]{geometry}
@@ -84,10 +82,12 @@ columnsep=5mm]{geometry}
 \def\@maketitle{\newpage
 	\null
 	\vskip 5mm \begin{center}
-		{{\@title}} \vskip 12pt {\fontsize{11pt}{12pt}\selectfont
-			\begin{tabular}[t]{c}\@name \\ \@address
-			\end{tabular}\par} \end{center}
-	\par
+		{{\@title}}
+		\vskip 12pt
+		{\fontsize{11pt}{12pt}\selectfont \@name }
+		\vskip 12pt
+		{\fontsize{10pt}{11pt}\selectfont \@address }
+	\end{center}
 	\vskip 12pt}
 
 \def\title#1{\gdef\@title{\fontsize{14pt}{15.4pt}\selectfont\bf{#1}}}
